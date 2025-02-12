@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 
-const NavBar = () => {
+const NavBar = ({filterTitle, setFilterTitle}) => {
   return (
     <div>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -12,20 +12,22 @@ const NavBar = () => {
             <Nav.Link href="#features">Movies</Nav.Link>
             <Nav.Link href="#pricing">TV shows</Nav.Link>
           </Nav>
-          {/* <Form className="d-flex gap-5">
-            <Button variant="outline-success">Add Movie</Button>
+          <Form className="d-flex gap-5">
+            {/* <Button variant="outline-success">Add Movie</Button> */}
 
             <Form.Control
               type="search"
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={filterTitle}
+              onChange={(e) => setFilterTitle(e.target.value)}
             />
-          </Form> */}
+          </Form>
         </Container>
       </Navbar>
     </div>
   );
-}
+};
 
 export default NavBar

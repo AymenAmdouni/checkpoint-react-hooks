@@ -14,7 +14,7 @@ const App = () => {
   const [filterRate, setFilterRate] = useState(0);
   return (
     <div>
-      <NavBar />
+      <NavBar filterTitle={filterTitle} setFilterTitle={setFilterTitle} />
       <div className="d-flex justify-content-between align-items-center">
         <AddMovie addMovie={addMovie} />
         <FilterMovies
@@ -24,7 +24,11 @@ const App = () => {
           setFilterRate={setFilterRate}
         />
       </div>
-      <MovieList movies={movies} filterTitle={filterTitle} filterRate={filterRate}/>
+      <MovieList
+        movies={movies}
+        filterTitle={filterTitle}
+        filterRate={filterRate}
+      />
     </div>
   );
 };
