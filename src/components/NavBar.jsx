@@ -1,7 +1,8 @@
-import React from 'react'
-import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
+import React from "react";
+import { Container, Form, Nav, Navbar } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-const NavBar = ({filterTitle, setFilterTitle}) => {
+const NavBar = ({ filterTitle, setFilterTitle }) => {
   return (
     <div>
       <Navbar bg="dark" data-bs-theme="dark">
@@ -10,7 +11,9 @@ const NavBar = ({filterTitle, setFilterTitle}) => {
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#features">Movies</Nav.Link>
-            <Nav.Link href="#pricing">TV shows</Nav.Link>
+            <Nav.Link as={Link} to="/tvshows">
+              TV shows
+            </Nav.Link>
           </Nav>
           <Form className="d-flex gap-5">
             {/* <Button variant="outline-success">Add Movie</Button> */}
@@ -30,4 +33,4 @@ const NavBar = ({filterTitle, setFilterTitle}) => {
   );
 };
 
-export default NavBar
+export default NavBar;
